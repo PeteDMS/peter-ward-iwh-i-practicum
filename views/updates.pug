@@ -1,0 +1,20 @@
+//- ** This is a sample of a pug template and how it uses the data passed to it from index.js.
+
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Add new Pet
+        form(action="/update-pets" method="POST")
+            label(for="name") Name:
+            input(id="name" type="text" name="name" placeholder="Name")
+            label(for="type") Type:
+            input(id="type" type="text" name="type" placeholder="Type")
+            label(for="age") Age:
+            input(id="age" type="number" name="age" placeholder="Name")
+            input(type="submit")
+            p 
+                a(href='/') Return to the homepage
