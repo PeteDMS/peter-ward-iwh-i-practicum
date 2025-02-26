@@ -10,8 +10,13 @@ app.use(express.json());
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = '';
 
-
+// * Global vars for ease/visibility.
 const pets = `https://api.hubapi.com/crm/v3/objects/p49395028_pets`;
+const properties = [
+    'name',
+    'type',
+    'age'
+];
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
@@ -20,9 +25,9 @@ app.get('/', async (req, res) => {
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
-    }
+    };
     try {
-        const resp = await axios.get(pets + '?properties=name,type,age', { headers });
+        const resp = await axios.get(pets, { params: { 'properties': properties.join(',') }, headers: headers });
         const data = resp.data.results;
         res.render('pets', { title: 'Pets | HubSpot APIs', data });      
     } catch (error) {
