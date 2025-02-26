@@ -10,7 +10,7 @@ html
         h1 Pets
         .cards 
             each pet in data
-                #{pet.properties.name}
                 .card 
-                    h2.card__name #{pet.properties.name} - #{pet.properties.age}
-                    p Type: #{pet.properties.type}
+                    h2.card__name #{pet.properties.name}
+                    p.card__email #{pet.properties.type} - #{pet.properties.age}
+        a(href='/') Return to the homepage
