@@ -6,7 +6,7 @@ body, * {
     padding: 0;
 }
 
-h1 {
+h1, form, p {
     margin: 1rem;
 }
 
@@ -55,4 +55,25 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+}
+
+table {
+    margin:1rem;
+}
+table tr {
+
+}
+table tr th,
+table tr td {
+    font-size:14px;
+    padding:5px;
+    min-width:50px;
+}
+table tr th {
+    text-align:center;
+    font-weight:bold;
+    background-color:lightpink;
+}
+table tr td {
+    border:1px solid #000;
 }
